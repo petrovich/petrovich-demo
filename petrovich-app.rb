@@ -14,14 +14,9 @@ class PetrovichApp < Sinatra::Base
   set :assets_js_compressor,  :uglifier
 
   register Sinatra::AssetPipeline
-  helpers  Sinatra::JSON
+  configure { EvilFront.install_all(sprockets) }
 
-  configure do
-    AutoprefixerRails.install(sprockets)
-    RailsSassImages.install(sprockets)
-    EvilFront.install(sprockets)
-    Csso.install(sprockets)
-  end
+  helpers  Sinatra::JSON
 
   # TODO: реализовать интерфейс
   get '/' do
