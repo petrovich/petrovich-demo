@@ -20,6 +20,7 @@ class PetrovichApp < Sinatra::Base
     AutoprefixerRails.install(sprockets)
     RailsSassImages.install(sprockets)
     EvilFront.install(sprockets)
+    Csso.install(sprockets)
   end
 
   # TODO: реализовать интерфейс

@@ -1,10 +1,11 @@
 GIT
   remote: git://github.com/ai/evil-front.git
-  revision: 4a7c61901e02ad5ea490bf5e30a8b69d5046a7fb
+  revision: b6b2e13a53e35e95424d498bbcc7a02b6afe2ea9
   specs:
     evil-front (0.1)
       autoprefixer-rails (>= 0.5)
       coffee-script (>= 2.2.0)
+      csso-rails (>= 0.3)
       evil-blocks-rails (>= 0.2)
       rails-sass-images (>= 0.3)
       sass (>= 3.2.9)
@@ -24,6 +25,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    csso-rails (0.3.0)
+      execjs (~> 1.4)
     dimensions (1.2.0)
     eventmachine (1.0.3)
     evil-blocks-rails (0.2.0)
