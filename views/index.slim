@@ -2,12 +2,14 @@ doctype 5
 html lang="ru"
   head
     meta charset="UTF-8"
-    title Петрович
+    title Petrovich
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic"
   body
-    hgroup.title-section
-      img.logo src="/logo.png" alt="Петрович"
-      h1 Петрович
-      h2 Русское склонение имён для Руби
+    article.center-content
+      hgroup.title-section
+        img.logo src="/logo.png" alt="Петрович"
+        h1.name Petrovich
+        h2.desc Русское склонение имён для Руби
 
-    style= settings.sprockets['app.css']
-    script= settings.sprockets['app.js']
+    style== settings.sprockets['app.css']
+    script== settings.sprockets['app.js']
