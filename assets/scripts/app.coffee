@@ -1,3 +1,5 @@
+#= require evil-blocks
+
 $(document).ready ->
 
-  $('.styled-text').click -> $(@).select()
+  $('@input-name').click -> $(@).select()

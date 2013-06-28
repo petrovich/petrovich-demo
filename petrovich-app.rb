@@ -14,7 +14,10 @@ class PetrovichApp < Sinatra::Base
   set :assets_js_compressor,  :uglifier
 
   register Sinatra::AssetPipeline
-  configure { EvilFront.install_all(sprockets) }
+  configure do
+    EvilFront.install_all(sprockets)
+    EvilBlocks.install_to_slim!
+  end
 
   helpers  Sinatra::JSON
 
@@ -52,7 +55,6 @@ class PetrovichApp < Sinatra::Base
 
   def example(options)
     petrovich = Petrovich.new(options[:gender])
-
     create_hash(Petrovich::CASES) do |gcase|
       create_hash([:lastname, :firstname, :middlename]) do |part|
         petrovich.firstname(options[part], gcase) if options[part]

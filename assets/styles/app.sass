@@ -1,19 +1,13 @@
-*
-  padding: 0
-  margin: 0
+@import "evil-front"
 
-a, input
-  &:focus
-    outline: none
-::-moz-focus-inner
-  border: 0
++evil-reset
 
 body, input
-  background: white
-  color: black
   font-family: Cuprum, sans-serif
   font-size: 20px
-  line-height: 1.4
+
+body
+  background: #f8f8f8
 
 .center-content
   width: 600px
@@ -25,41 +19,40 @@ body, input
   padding-left: 50px + 10px
   margin: 30px 0 40px 0
   .logo
-    width: 50px
-    height: 50px
+    +size(50)
     position: absolute
     top: 0
     left: 0
   .name
     padding-top: 4px
-    font-weight: normal
     font-size: 42px
     line-height: 1
   .desc
-    font-weight: normal
     font-size: 20px
     color: #555
 
 .example-section
-  padding-left: 20px
+  padding-left: 50px + 10px
   .styled-text
-    border: 1px solid #bbb
-    height: 32px
-    line-height: 1
-    padding: 0 5px
-    width: 240px
-    margin-left: -6px
-  .case, .case-name, .form
+    border: none
     height: 34px
-    line-height: 34px
+    line-height: 1
+    padding: 0 8px
+    width: 240px
+    margin-left: -8px
+    box-shadow: 0 1px 8px black(0.2)
+    color: black
+    background: white
+    border-radius: 2px
+  .case, .name, .form
+    +height(34px)
   .form
     position: relative
-    margin-bottom: 8px
+    margin-bottom: 30px
   .case
-    list-style: none
     position: relative
     color: #333
-  .case-name
+  .name
     position: absolute
     top: 1px
     right: 100%
