@@ -57,7 +57,7 @@ class PetrovichApp < Sinatra::Base
     petrovich = Petrovich.new(options[:gender])
     create_hash(Petrovich::CASES) do |gcase|
       create_hash([:lastname, :firstname, :middlename]) do |part|
-        petrovich.firstname(options[part], gcase) if options[part]
+        petrovich.send(part, options[part], gcase) if options[part]
       end
     end
   end
