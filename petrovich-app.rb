@@ -20,6 +20,19 @@ class PetrovichApp < Sinatra::Base
 
   # TODO: реализовать интерфейс
   get '/' do
+    @input   = 'Иванов Иван Иванович'
+    @example = example(gender:     :male,
+                       lastname:   'Иванов',
+                       firstname:  'Иван',
+                       middlename: 'Иванович')
+    @cases   = {
+      genitive:      ['род.', 'Родительный падеж'],
+      dative:        ['дат.', 'Дательный падеж'],
+      accusative:    ['вин.', 'Винительный падеж'],
+      instrumental:  ['тво.', 'Творительный падеж'],
+      prepositional: ['пре.', 'Предложеный падеж']
+    }
+
     slim :index
   end
 
@@ -30,27 +43,26 @@ class PetrovichApp < Sinatra::Base
   # * firstname  - Имя
   # * middlename - Отчество
   # * lastname   - Фамилия
+  # * gender     - Пол
   #
   # ФИО должны указываться в именительном падаже
   post '/decline.json' do
-    petrovich = Petrovich.new
-    result    = []
-
-    Petrovich::CASES.each do |gcase|
-      result << {
-        firstname:  petrovich.firstname(params[:firstname], gcase),
-        middlename: petrovich.middlename(params[:middlename], gcase),
-        lastname:   petrovich.lastname(params[:lastname], gcase),
-        case:       gcase
-      }
-    end
-
-    json result
+    json example(params)
   end
 
-  # Список всех падежей
-  # NOTICE: вдруг пригодится - если нет, удалить
-  get '/cases.json' do
-    json Petrovich::CASES
+  def example(options)
+    petrovich = Petrovich.new(options[:gender])
+
+    create_hash(Petrovich::CASES) do |gcase|
+      create_hash([:lastname, :firstname, :middlename]) do |part|
+        petrovich.firstname(options[part], gcase) if options[part]
+      end
+    end
+  end
+
+  def create_hash(keys, &block)
+    hash = { }
+    keys.each { |i| hash[i] = yield(i) }
+    hash
   end
 end

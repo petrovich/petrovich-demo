@@ -4,6 +4,7 @@ html lang="ru"
     meta charset="UTF-8"
     title Petrovich
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic"
+    script( src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" deferer )
   body
     article.center-content
       hgroup.title-section
@@ -11,5 +12,20 @@ html lang="ru"
         h1.name Petrovich
         h2.desc Русское склонение имён для Руби
 
+      section.example-section
+        form.form action="/" method="get"
+          .case-name title="Именительный падеж" им.
+          input.styled-text.js-input-name type="text" value=@input
+
+        ul.cases
+          - @example.each_pair do |gcase, parts|
+            - next if gcase == :nominative
+            li.case
+              .case-name title=@cases[gcase][1]
+                = @cases[gcase][0]
+              .value= parts.values.join(' ')
+
+      section.howto-section
+
     style== settings.sprockets['app.css']
-    script== settings.sprockets['app.js']
+    script( deferer )== settings.sprockets['app.js']
