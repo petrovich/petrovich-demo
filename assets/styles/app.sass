@@ -19,7 +19,7 @@ body
 .title-section
   position: relative
   padding-left: 50px + 10px
-  margin: 30px 0 40px 0
+  margin: 30px 0 30px 0
   .logo
     +size(50)
     position: absolute
@@ -46,11 +46,14 @@ body
     color: black
     background: white
     border-radius: 2px
-  .case, .name, .form
+    position: relative
+    z-index: 2
+  .case, .name
     +height(34px)
   .form
     position: relative
-    margin-bottom: 30px
+  .cases
+    padding-top: 26px
   .case
     position: relative
     color: #333
@@ -61,3 +64,28 @@ body
     margin-right: 11px
     font-size: 15px
     color: $blue
+  .labels, .genders
+    margin-left: -8px
+  .gender-link, .label
+    display: inline-block
+    font-size: 15px
+    padding: 0 8px
+    color: #bbb
+    +height(32px)
+  .is-changable .label, .gender-link
+    transition: background 200ms, color 200ms
+    cursor: pointer
+    border-radius: 0 0 2px 2px
+    transform-origin: 50% 0
+    &:hover
+      background: #eee
+      color: #aaa
+    &:active
+      transform: scale(0.95)
+      transition: none
+  .label.is-used, .gender-input:checked + .gender-link
+    color: #333
+    &:hover
+      color: #222
+  .gender-input
+    display: none
