@@ -18,13 +18,13 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    autoprefixer-rails (0.5.20130629)
+    autoprefixer-rails (0.6.20130716)
       execjs
-    backports (3.3.2)
+    backports (3.3.3)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
+    coffee-script-source (1.6.3)
     csso-rails (0.3.0)
       execjs (~> 1.4)
     dimensions (1.2.0)
@@ -36,7 +36,7 @@ GEM
     hike (1.2.3)
     mime-types (1.23)
     multi_json (1.7.7)
-    petrovich (0.1.1)
+    petrovich (0.1.2)
       unicode_utils (~> 1.4)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -85,7 +85,7 @@ GEM
     standalone_typograf (2.0.2)
     temple (0.6.5)
     tilt (1.4.1)
-    uglifier (2.1.1)
+    uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicode_utils (1.4.0)
