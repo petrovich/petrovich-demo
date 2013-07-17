@@ -18,7 +18,7 @@ html lang="ru"
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
               label
-                input.gender-input type="radio" data-role=gender name="gender" value=gender checked=(gender == :male)
+                input.gender-input type="radio" data-role="gender #{gender}" name="gender" value=gender checked=(gender == :male)
                 .gender-link= name
 
         ul.cases
@@ -27,7 +27,7 @@ html lang="ru"
             li.case
               .name title=@cases[gcase][1]
                 = @cases[gcase][0]
-              .value= parts.values.join(' ')
+              .value data-role=gcase = parts.values.join(' ')
 
       section.howto-section
 

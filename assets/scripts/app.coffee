@@ -2,29 +2,52 @@
 #= require evil-front/after
 
 evil.block '.example-section', ($, b) ->
+  example   = -> $.trim(b.example.val())
+  nameParts = -> example().split(' ')
+
+  prev = example()
+  b.example.on 'change keyup', ->
+    return if prev == example()
+    prev = example()
+    b.example.trigger 'update'
 
   clearOnFocus: ->
-    b.example.focus -> b.example.select()
+    b.example.click -> b.example.select()
 
   autodetectGender: ->
-    b.example.on 'change keyup', ->
-      parts = $.trim($(@).val()).split(' ')
+    b.example.on 'update', ->
+      parts = nameParts()
 
       if parts.length == 3
-        last = parts[2][-3..-1]
+        last = example()[-3..-1]
         if last == 'вич'
-          b.male.prop(checked: true)
+          b.male.prop(checked: true).change()
         else if last == 'вна'
-          b.female.prop(checked: true)
+          b.female.prop(checked: true).change()
 
   autoSend: ->
+    b.gender.change -> b.form.submit()
+
     lastUp = null
-    b.example.on 'change keyup', ->
+    b.example.on 'update', ->
       clearTimeout(lastUp)
       lastUp = after 500, ->
         b.form.submit()
 
   ajax: ->
     b.form.submit ->
-      console.log('send')
+      return false if example() == ''
+
+      parts = nameParts()
+      data  =
+        lastname:   parts[0]
+        firstname:  parts[1]
+        middlename: parts[2]
+        gender:     b.gender.filter(':checked').val()
+
+      $.post '/decline.json', data, (result) ->
+        for gcase, i of result
+          name = [i.lastname, i.firstname, i.middlename]
+          b[gcase]?.text(name.join(' '))
+
       false
