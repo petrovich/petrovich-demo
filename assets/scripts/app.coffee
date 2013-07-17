@@ -1,19 +1,30 @@
 #= require evil-blocks
+#= require evil-front/after
 
-$(document).ready ->
+evil.block '.example-section', ($, b) ->
 
-  input  = $('@input-name')
-  male   = $('@male')
-  female = $('@female')
+  clearOnFocus: ->
+    b.example.focus -> b.example.select()
 
-  input.click -> $(@).select()
+  autodetectGender: ->
+    b.example.on 'change keyup', ->
+      parts = $.trim($(@).val()).split(' ')
 
-  input.on 'change keyup', ->
-    parts = $.trim($(@).val()).split(' ')
+      if parts.length == 3
+        last = parts[2][-3..-1]
+        if last == 'вич'
+          b.male.prop(checked: true)
+        else if last == 'вна'
+          b.female.prop(checked: true)
 
-    if parts.length == 3
-      last = parts[2][-3..-1]
-      if last == 'вич'
-        male.prop(checked: true)
-      else if last == 'вна'
-        female.prop(checked: true)
+  autoSend: ->
+    lastUp = null
+    b.example.on 'change keyup', ->
+      clearTimeout(lastUp)
+      lastUp = after 500, ->
+        b.form.submit()
+
+  ajax: ->
+    b.form.submit ->
+      console.log('send')
+      false

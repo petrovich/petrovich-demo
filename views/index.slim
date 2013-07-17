@@ -13,9 +13,9 @@ html lang="ru"
         h2.desc Русское склонение имён для Руби
 
       section.example-section
-        form.form action="/"
+        form.form@form action="/"
           label.label( for="example" ) Фамилия Имя Отчество
-          input.text-input@input-name#example type="text" value=@input
+          input.text-input@example#example type="text" value=@input
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
               label
