@@ -14,7 +14,6 @@ html lang="ru"
 
       section.example-section
         form.form@form action="/"
-          label.label( for="example" ) Фамилия Имя Отчество
           input.text-input@example#example type="text" value=@input
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
