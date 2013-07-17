@@ -64,28 +64,30 @@ body
     margin-right: 11px
     font-size: 15px
     color: $blue
-  .labels, .genders
+  .genders, .label
     margin-left: -8px
   .gender-link, .label
     display: inline-block
     font-size: 15px
     padding: 0 8px
-    color: #bbb
+    color: #aaa
     +height(32px)
-  .is-changable .label, .gender-link
+  .label
+    display: block
+  .gender-link
     transition: background 200ms, color 200ms
     cursor: pointer
     border-radius: 0 0 2px 2px
     transform-origin: 50% 0
     &:hover
       background: #eee
-      color: #aaa
+      color: #999
     &:active
       transform: scale(0.95)
       transition: none
-  .label.is-used, .gender-input:checked + .gender-link
+  .gender-input
+    display: none
+  .gender-input:checked + .gender-link
     color: #333
     &:hover
       color: #222
-  .gender-input
-    display: none

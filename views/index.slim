@@ -14,15 +14,12 @@ html lang="ru"
 
       section.example-section
         form.form action="/"
-          .labels
-            span.label.is-used Фамилия
-            span.label.is-used Имя
-            span.label.is-used Отчество
-          input.text-input@input-name type="text" value=@input
+          label.label( for="example" ) Фамилия Имя Отчество
+          input.text-input@input-name#example type="text" value=@input
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
               label
-                input.gender-input type="radio" name="gender" value=gender checked=(gender == :male)
+                input.gender-input type="radio" data-role=gender name="gender" value=gender checked=(gender == :male)
                 .gender-link= name
 
         ul.cases
