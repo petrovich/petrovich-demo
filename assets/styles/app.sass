@@ -3,6 +3,7 @@
 $blue: #4787ed
 
 +evil-reset
++styled-taps
 
 body, input
   font-family: Cuprum, sans-serif
@@ -39,14 +40,11 @@ body
     +height(40px)
     background: white
     background: linear-gradient(white, #f0f0f0)
-    box-shadow: 0 1px 8px black(0.3)
-    color: black
     border-radius: 2px
     text-decoration: none
     position: absolute
     top: 8px
     left: 500px
-    color: #333
     transition: color 200ms
     &::before
       content: " "
@@ -54,15 +52,19 @@ body
       position: absolute
       top: 8px
       left: 12px
-      opacity: 0.8
       transition: opacity 200ms
+    +no-hover
+      box-shadow: 0 1px 8px black(0.3)
+      transform: none
+      color: #333
+      &::before
+        opacity: 0.8
     &:hover
       color: black
       &::before
         opacity: 1
-    &:active
+    &:active, &.is-tapped
       box-shadow: 0 0 3px black(0.5)
-      transition: none
       transform: translateY(1px)
 
 .section-title
@@ -85,15 +87,16 @@ body
     padding: 0 8px
     width: 260px
     margin-left: -8px
-    box-shadow: 0 1px 8px black(0.2)
     color: black
     background: white
     border-radius: 2px
     position: relative
     z-index: 2
-    &:active
+    +no-hover
+      box-shadow: 0 1px 8px black(0.2)
+      transform: none
+    &:active, &.is-tapped
       box-shadow: 0 0 3px black(0.3)
-      transition: none
       transform: translateY(1px)
   .case, .name
     +height(34px)

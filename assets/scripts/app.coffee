@@ -1,5 +1,6 @@
 #= require evil-blocks
 #= require evil-front/after
+#= require evil-front/tappable
 
 evil.block '.example-section', ($, b) ->
   example   = -> $.trim(b.example.val())
