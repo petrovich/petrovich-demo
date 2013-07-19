@@ -56,6 +56,11 @@ html lang="ru"
                 | p.lastname(<span class="string" data-role="lastname">"#{@input[:lastname]}"</span>, <span class="string">:dative</span>)
                 = '   '
                 span.comment@dative #=> "#{@example[:dative][:lastname]}"
+          li.note
+            | Подключение в модель и больше примеров смотрите
+            = ' '
+            a.link href="https://github.com/rocsci/petrovich#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" в документации
+            |.
 
     style== settings.sprockets['app.css']
     script( deferer )== settings.sprockets['app.js']
