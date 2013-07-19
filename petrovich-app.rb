@@ -21,7 +21,6 @@ class PetrovichApp < Sinatra::Base
 
   helpers  Sinatra::JSON
 
-  # TODO: реализовать интерфейс
   get '/' do
     @input = { gender:     :male,
                lastname:   'Иванов',

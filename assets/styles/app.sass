@@ -33,6 +33,37 @@ body
   .desc
     font-size: 20px
     color: #555
+  .button
+    display: inline-block
+    padding: 0 10px 0 40px
+    +height(40px)
+    background: white
+    background: linear-gradient(white, #f0f0f0)
+    box-shadow: 0 1px 8px black(0.3)
+    color: black
+    border-radius: 2px
+    text-decoration: none
+    position: absolute
+    top: 8px
+    left: 500px
+    color: #333
+    transition: color 200ms
+    &::before
+      content: " "
+      +hidpi-inline("github.png")
+      position: absolute
+      top: 8px
+      left: 12px
+      opacity: 0.8
+      transition: opacity 200ms
+    &:hover
+      color: black
+      &::before
+        opacity: 1
+    &:active
+      box-shadow: 0 0 3px black(0.5)
+      transition: none
+      transform: translateY(1px)
 
 .section-title
   font-weight: normal
@@ -60,6 +91,10 @@ body
     border-radius: 2px
     position: relative
     z-index: 2
+    &:active
+      box-shadow: 0 0 3px black(0.3)
+      transition: none
+      transform: translateY(1px)
   .case, .name
     +height(34px)
   .form
@@ -114,7 +149,7 @@ body
     font-family: "PT Mono", monospace
     margin: 6px 0 0 -8px
     padding: 4px 8px
-    box-shadow: 0 1px 5px black(0.2)
+    box-shadow: 0 1px 5px black(0.15)
     border-radius: 2px
     overflow: auto
   .string
@@ -129,6 +164,7 @@ body
     text-decoration: none
     line-height: 1
     border-bottom: 1px solid rgba($blue, 0.4)
+    transition: border 200ms
     &:hover
       border-bottom-color: $blue
     &:active
