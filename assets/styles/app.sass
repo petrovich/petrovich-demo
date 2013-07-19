@@ -1,0 +1,174 @@
+@import "evil-front"
+
+$blue: #4787ed
+
++evil-reset
++styled-taps
+
+body, input
+  font-family: Cuprum, sans-serif
+  font-size: 20px
+
+body
+  background: #f8f8f8
+
+.center-content
+  width: 900px
+  margin: 0 auto
+  padding: 10px
+  +clearfix
+
+.title-section
+  position: relative
+  padding-left: 50px + 10px
+  margin: 30px 0 40px 0
+  .logo
+    +size(50)
+    position: absolute
+    top: 0
+    left: 0
+  .name
+    padding-top: 4px
+    font-size: 42px
+    line-height: 1
+  .desc
+    font-size: 20px
+    color: #555
+  .button
+    display: inline-block
+    padding: 0 10px 0 40px
+    +height(40px)
+    background: white
+    background: linear-gradient(white, #f0f0f0)
+    border-radius: 2px
+    text-decoration: none
+    position: absolute
+    top: 8px
+    left: 500px
+    transition: color 200ms
+    &::before
+      content: " "
+      +hidpi-inline("github.png")
+      position: absolute
+      top: 8px
+      left: 12px
+      transition: opacity 200ms
+    +no-hover
+      box-shadow: 0 1px 8px black(0.3)
+      transform: none
+      color: #333
+      &::before
+        opacity: 0.8
+    &:hover
+      color: black
+      &::before
+        opacity: 1
+    &:active, &.is-tapped
+      box-shadow: 0 0 3px black(0.5)
+      transform: translateY(1px)
+
+.section-title
+  font-weight: normal
+  font-size: 26px
+  padding-bottom: 10px
+  color: #333
+
+.example-section, .howto-section
+  float: left
+  width: 450px
+  box-sizing: border-box
+
+.example-section
+  padding-left: 50px + 10px
+  .text-input
+    border: none
+    height: 34px
+    line-height: 1
+    padding: 0 8px
+    width: 260px
+    margin-left: -8px
+    color: black
+    background: white
+    border-radius: 2px
+    position: relative
+    z-index: 2
+    +no-hover
+      box-shadow: 0 1px 8px black(0.2)
+      transform: none
+    &:active, &.is-tapped
+      box-shadow: 0 0 3px black(0.3)
+      transform: translateY(1px)
+  .case, .name
+    +height(34px)
+  .form
+    position: relative
+  .cases
+    padding-top: 26px
+  .case
+    position: relative
+    color: #333
+  .name
+    position: absolute
+    top: 1px
+    right: 100%
+    margin-right: 11px
+    font-size: 15px
+    color: $blue
+  .genders
+    margin-left: -8px
+  .gender-link
+    display: inline-block
+    font-size: 15px
+    padding: 0 8px
+    color: #aaa
+    +height(32px)
+  .gender-link
+    transition: background 200ms, color 200ms
+    cursor: pointer
+    border-radius: 0 0 2px 2px
+    transform-origin: 50% 0
+    &:hover
+      background: #eee
+      color: #999
+    &:active
+      transform: scale(0.95)
+      transition: none
+  .gender-input
+    display: none
+  .gender-input:checked + .gender-link
+    color: #333
+    &:hover
+      color: #222
+
+.howto-section
+  padding-left: 50px
+  font-size: 18px
+  .step
+    padding-bottom: 20px
+    list-style: decimal
+  .code
+    font-size: 14px
+    background: white
+    font-family: "PT Mono", monospace
+    margin: 6px 0 0 -8px
+    padding: 4px 8px
+    box-shadow: 0 1px 5px black(0.15)
+    border-radius: 2px
+    overflow: auto
+  .string
+    color: $blue
+  .comment
+    color: #666
+  .line
+    display: block
+  .link
+    display: inline-block
+    color: $blue
+    text-decoration: none
+    line-height: 1
+    border-bottom: 1px solid rgba($blue, 0.4)
+    transition: border 200ms
+    &:hover
+      border-bottom-color: $blue
+    &:active
+      transform: translateY(2px)

@@ -1,20 +1,67 @@
+GIT
+  remote: git://github.com/ai/evil-front.git
+  revision: 0b94a015571ed6baea7ce6093e3afc442bfbdd7b
+  specs:
+    evil-front (0.1)
+      autoprefixer-rails (>= 0.5)
+      coffee-script (>= 2.2.0)
+      csso-rails (>= 0.3)
+      evil-blocks-rails (>= 0.2)
+      rails-sass-images (>= 0.3)
+      sass (>= 3.2.9)
+      slim (>= 1.3.9)
+      sprockets (>= 1)
+      standalone_typograf (>= 2)
+      uglifier (>= 2.1.1)
+      unicode_utils (>= 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    backports (3.3.2)
+    autoprefixer-rails (0.6.20130716)
+      execjs
+    backports (3.3.3)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
+    csso-rails (0.3.0)
+      execjs (~> 1.4)
+    dimensions (1.2.0)
     eventmachine (1.0.3)
-    multi_json (1.7.6)
-    petrovich (0.1.0)
+    evil-blocks-rails (0.3.2)
+      sprockets (>= 2)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    hike (1.2.3)
+    mime-types (1.23)
+    multi_json (1.7.7)
+    petrovich (0.1.2)
       unicode_utils (~> 1.4)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rails-sass-images (0.3)
+      dimensions (> 0)
+      mime-types (> 0)
+      sass (> 0)
+      sprockets (> 0)
+    rake (10.1.0)
+    sass (3.2.9)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-asset-pipeline (0.2.0)
+      coffee-script
+      rake
+      sass
+      sinatra
+      sprockets
+      sprockets-helpers
+      sprockets-sass
     sinatra-contrib (1.4.0)
       backports (>= 2.0)
       eventmachine
@@ -22,14 +69,34 @@ GEM
       rack-test
       sinatra (~> 1.4.2)
       tilt (~> 1.3)
+    slim (2.0.0)
+      temple (~> 0.6.5)
+      tilt (~> 1.3, >= 1.3.3)
+    sprockets (2.10.0)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-helpers (1.0.1)
+      sprockets (~> 2.0)
+    sprockets-sass (1.0.1)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
+    standalone_typograf (2.0.2)
+    temple (0.6.5)
     tilt (1.4.1)
+    uglifier (2.1.2)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
     unicode_utils (1.4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  evil-front!
   multi_json
   petrovich
   sinatra
+  sinatra-asset-pipeline
   sinatra-contrib
