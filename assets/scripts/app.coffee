@@ -4,6 +4,7 @@
 evil.block '.example-section', ($, b) ->
   example   = -> $.trim(b.example.val())
   nameParts = -> example().split(' ')
+  howto     = $('.howto-section')
 
   prev = example()
   b.example.on 'change keyup', ->
@@ -50,4 +51,14 @@ evil.block '.example-section', ($, b) ->
           name = [i.lastname, i.firstname, i.middlename]
           b[gcase]?.text(name.join(' '))
 
+        howto.trigger('update', [data, result])
       false
+
+evil.block '.howto-section', ($, b, section) ->
+
+  update: ->
+    section.on 'update', (e, data, result) ->
+      b.gender.text(':' + data.gender)
+      b.lastname.text('"' + data.lastname + '"')
+      b.genitive.text('=> "' + result.genitive.lastname + '"')
+      b.dative.text('=> "' + result.dative.lastname + '"')

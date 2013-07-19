@@ -23,11 +23,11 @@ class PetrovichApp < Sinatra::Base
 
   # TODO: реализовать интерфейс
   get '/' do
-    @input   = 'Иванов Иван Иванович'
-    @example = example(gender:     :male,
-                       lastname:   'Иванов',
-                       firstname:  'Иван',
-                       middlename: 'Иванович')
+    @input = { gender:     :male,
+               lastname:   'Иванов',
+               firstname:  'Иван',
+               middlename: 'Иванович' }
+    @example = example(@input)
     @cases   = {
       genitive:      ['род.', 'Родительный падеж'],
       dative:        ['дат.', 'Дательный падеж'],

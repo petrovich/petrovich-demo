@@ -12,14 +12,15 @@ body
   background: #f8f8f8
 
 .center-content
-  width: 600px
+  width: 900px
   margin: 0 auto
   padding: 10px
+  +clearfix
 
 .title-section
   position: relative
   padding-left: 50px + 10px
-  margin: 30px 0 30px 0
+  margin: 30px 0 40px 0
   .logo
     +size(50)
     position: absolute
@@ -33,6 +34,17 @@ body
     font-size: 20px
     color: #555
 
+.section-title
+  font-weight: normal
+  font-size: 26px
+  padding-bottom: 10px
+  color: #333
+
+.example-section, .howto-section
+  float: left
+  width: 450px
+  box-sizing: border-box
+
 .example-section
   padding-left: 50px + 10px
   .text-input
@@ -40,7 +52,7 @@ body
     height: 34px
     line-height: 1
     padding: 0 8px
-    width: 240px
+    width: 260px
     margin-left: -8px
     box-shadow: 0 1px 8px black(0.2)
     color: black
@@ -89,3 +101,25 @@ body
     color: #333
     &:hover
       color: #222
+
+.howto-section
+  padding-left: 50px
+  font-size: 18px
+  .step
+    padding-bottom: 20px
+    list-style: decimal
+  .code
+    font-size: 14px
+    background: white
+    font-family: "PT Mono", monospace
+    margin: 6px 0 0 -8px
+    padding: 4px 8px
+    box-shadow: 0 1px 5px black(0.2)
+    border-radius: 2px
+    overflow: auto
+  .string
+    color: $blue
+  .comment
+    color: #666
+  .line
+    display: block

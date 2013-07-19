@@ -4,6 +4,7 @@ html lang="ru"
     meta charset="UTF-8"
     title Petrovich
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic"
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic"
     script( src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" deferer )
   body
     article.center-content
@@ -13,12 +14,14 @@ html lang="ru"
         h2.desc Русское склонение имён для Руби
 
       section.example-section
+        h2.section-title Пример
         form.form@form action="/"
-          input.text-input@example#example type="text" value=@input
+          - name = @input[:lastname] + ' ' + @input[:firstname] + ' ' + @input[:middlename]
+          input.text-input@example#example type="text" value=name
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
               label
-                input.gender-input type="radio" data-role="gender #{gender}" name="gender" value=gender checked=(gender == :male)
+                input.gender-input type="radio" data-role="gender #{gender}" name="gender" value=gender checked=(gender == @input[:gender])
                 .gender-link= name
 
         ul.cases
@@ -30,6 +33,29 @@ html lang="ru"
               .value data-role=gcase = parts.values.join(' ')
 
       section.howto-section
+        h2.section-title Инструкция
+        ul
+          li.step
+            | Добавьте гем в Gemfile:
+            pre.code
+              code.line
+                | gem <span class="string">"petrovich"</span>
+          li.step
+            | Создайте объект, выбрав пол:
+            pre.code
+              code.line
+                | p = Petrovich.new(<span class="string" data-role="gender">:#{@input[:gender]}</span>)
+          li.step
+            | Склоняйте:
+            pre.code
+              code.line
+                | p.lastname(<span class="string" data-role="lastname">"#{@input[:lastname]}"</span>, <span class="string">:genitive</span>)
+                = ' '
+                span.comment@genitive #=> "#{@example[:genitive][:lastname]}"
+              code.line
+                | p.lastname(<span class="string" data-role="lastname">"#{@input[:lastname]}"</span>, <span class="string">:dative</span>)
+                = '   '
+                span.comment@dative #=> "#{@example[:dative][:lastname]}"
 
     style== settings.sprockets['app.css']
     script( deferer )== settings.sprockets['app.js']
