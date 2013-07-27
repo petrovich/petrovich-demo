@@ -1,7 +1,7 @@
 require 'bundler/capistrano'
 
 set :application,   'petrovich_demo'
-set :repository,    'git@github.com:rocsci/petrovich-demo.git"'
+set :repository,    'git@github.com:rocsci/petrovich-demo.git'
 set :scm,           :git
 set :deploy_via,    :remote_cache
 set :branch,        'master'
