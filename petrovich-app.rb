@@ -32,7 +32,7 @@ class PetrovichApp < Sinatra::Base
       dative:        ['дат.', 'Дательный падеж'],
       accusative:    ['вин.', 'Винительный падеж'],
       instrumental:  ['тво.', 'Творительный падеж'],
-      prepositional: ['пре.', 'Предложеный падеж']
+      prepositional: ['пре.', 'Предложный падеж']
     }
 
     slim :index
