@@ -41,6 +41,7 @@ GEM
       multi_json (~> 1.0)
     highline (1.6.19)
     hike (1.2.3)
+    kgio (2.8.0)
     mime-types (1.23)
     multi_json (1.7.7)
     net-scp (1.1.2)
@@ -62,6 +63,7 @@ GEM
       mime-types (> 0)
       sass (> 0)
       sprockets (> 0)
+    raindrops (0.11.0)
     rake (10.1.0)
     sass (3.2.9)
     sinatra (1.4.3)
@@ -103,6 +105,10 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicode_utils (1.4.0)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
@@ -115,3 +121,4 @@ DEPENDENCIES
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib
+  unicorn
