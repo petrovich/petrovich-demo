@@ -21,6 +21,12 @@ GEM
     autoprefixer-rails (0.6.20130716)
       execjs
     backports (3.3.3)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -33,9 +39,17 @@ GEM
       sprockets (>= 2)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    highline (1.6.19)
     hike (1.2.3)
     mime-types (1.23)
     multi_json (1.7.7)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.8)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     petrovich (0.1.2)
       unicode_utils (~> 1.4)
     rack (1.5.2)
@@ -94,6 +108,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
   evil-front!
   multi_json
   petrovich
