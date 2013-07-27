@@ -42,6 +42,7 @@ GEM
     highline (1.6.19)
     hike (1.2.3)
     kgio (2.8.0)
+    libv8 (3.11.8.17)
     mime-types (1.23)
     multi_json (1.7.7)
     net-scp (1.1.2)
@@ -65,6 +66,7 @@ GEM
       sprockets (> 0)
     raindrops (0.11.0)
     rake (10.1.0)
+    ref (1.0.5)
     sass (3.2.9)
     sinatra (1.4.3)
       rack (~> 1.4)
@@ -100,6 +102,9 @@ GEM
       tilt (~> 1.1)
     standalone_typograf (2.0.2)
     temple (0.6.5)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     tilt (1.4.1)
     uglifier (2.1.2)
       execjs (>= 0.3.0)
@@ -121,4 +126,5 @@ DEPENDENCIES
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib
+  therubyracer
   unicorn
