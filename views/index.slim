@@ -19,7 +19,7 @@ html lang="ru"
         h2.section-title Пример
         form.form@form action="/"
           - name = @input[:lastname] + ' ' + @input[:firstname] + ' ' + @input[:middlename]
-          input.text-input@example#example type="text" value=name
+          input.text-input@example#example type="text" value=name placeholder="Фамилия Имя Отчество"
           .genders
             - { male: 'мужской', female: 'женский' }.each_pair do |gender, name|
               label

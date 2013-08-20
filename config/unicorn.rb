@@ -1,4 +1,4 @@
-# set path to app that will be used to configure unicorn, 
+# set path to app that will be used to configure unicorn,
 # note the trailing slash in this example
 @dir = "/home/petrovich_demo/current"
 
@@ -7,7 +7,7 @@ working_directory @dir
 
 timeout 30
 
-# Specify path to socket unicorn listens to, 
+# Specify path to socket unicorn listens to,
 # we will use this in our nginx.conf later
 listen "/home/petrovich_demo/shared/sockets/unicorn.sock", :backlog => 64
 
