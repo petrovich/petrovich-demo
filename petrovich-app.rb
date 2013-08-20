@@ -5,6 +5,7 @@ Bundler.require(:default)
 require 'sinatra/base'
 require 'sinatra/json'
 require 'sinatra/asset_pipeline'
+require 'sprockets-helpers'
 
 require 'petrovich'
 
