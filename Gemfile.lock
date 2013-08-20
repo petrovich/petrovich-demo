@@ -126,5 +126,6 @@ DEPENDENCIES
   sinatra (= 1.4.3)
   sinatra-asset-pipeline (= 0.2.0)
   sinatra-contrib (= 1.4.0)
+  sprockets-helpers
   therubyracer (= 0.12.0)
   unicorn (= 4.6.3)
