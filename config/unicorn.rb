@@ -1,19 +1,28 @@
-# set path to app that will be used to configure unicorn,
-# note the trailing slash in this example
-@dir = "/home/petrovich_demo/current"
-
-worker_processes 2
-working_directory @dir
-
+# define paths and filenames
+deploy_to   = "/home/petrovich_demo"
+rack_root   = "#{deploy_to}/current"
+pid_file    = "#{deploy_to}/shared/pids/unicorn.pid"
+socket_file = "#{deploy_to}/shared/sockets/unicorn.sock"
+log_file    = "#{rack_root}/log/unicorn.log"
+err_log     = "#{rack_root}/log/unicorn_error.log"
+old_pid     = pid_file + '.oldbin'
+ 
 timeout 30
-
-# Specify path to socket unicorn listens to,
-# we will use this in our nginx.conf later
-listen "/home/petrovich_demo/shared/sockets/unicorn.sock", :backlog => 64
-
-# Set process id path
-pid "/home/petrovich_demo/shared/pids/unicorn.pid"
-
-# Set log file paths
-stderr_path "/home/petrovich_demo/shared/log/unicorn.stderr.log"
-stdout_path "/home/petrovich_demo/shared/log/unicorn.stdout.log"
+worker_processes 1
+listen socket_file, :backlog => 1024
+ 
+pid         pid_file
+stderr_path err_log
+stdout_path log_file
+ 
+before_fork do |server, worker|
+  # zero downtime deploy magic:
+  # if unicorn is already running, ask it to start a new process and quit.
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # already done
+    end
+  end
+end

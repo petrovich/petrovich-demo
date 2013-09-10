@@ -21,7 +21,12 @@ server 'rocketscience.it', :app, :web, :db, :primary => true
 ssh_options[:forward_agent] = true
 default_run_options[:pty]   = false
 
-after "deploy", "deploy:cleanup"
+namespace :system_dir do
+  desc "Symlink the system files"
+  task :create, :roles => [:app] do
+    run "mkdir -p #{shared_path}/system"
+  end
+end
 
 namespace :deploy do
   task :restart do
@@ -35,4 +40,15 @@ namespace :deploy do
   task :stop do
     run "if [ -f #{unicorn_pid} ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
   end
+
+  namespace :assets do
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+      run %Q{cd #{latest_release} && bundle exec rake assets:precompile}
+    end
+  end
 end
+
+
+after "deploy",             "deploy:cleanup"
+after "deploy:update_code", "deploy:assets:precompile"
+after "deploy:update_code", "system_dir:create"

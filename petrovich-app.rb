@@ -13,29 +13,13 @@ require 'petrovich'
 class PetrovichApp < Sinatra::Base
   register Sinatra::AssetPipeline
 
-  set :sprockets, Sprockets::Environment.new(root)
-  set :assets_prefix, '/assets'
-  set :digest_assets, false
-
-  set :assets_precompile,     []
+  set :assets_precompile,     %w(application.css application.js)
+  set :assets_prefix,         'assets'
   set :assets_css_compressor, :sass
   set :assets_js_compressor,  :uglifier
-  
-  configure do
-    # Setup Sprockets
-    sprockets.append_path File.join(root, 'assets', 'stylesheets')
-    sprockets.append_path File.join(root, 'assets', 'javascripts')
-    sprockets.append_path File.join(root, 'assets', 'images')
+  set :assets_digest,         false
 
-    # Configure Sprockets::Helpers (if necessary)
-    Sprockets::Helpers.configure do |config|
-      config.environment = sprockets
-      config.prefix      = assets_prefix
-      config.digest      = digest_assets
-      config.public_path = public_folder
-      config.debug       = true if development?
-    end
-  end
+  set :environment, :production
 
   helpers do
     include Sprockets::Helpers
