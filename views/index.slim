@@ -46,18 +46,21 @@ html lang="ru"
             | Создайте объект, выбрав пол:
             pre.code
               code.line
-                | p = Petrovich.new(<span class="string" data-role="gender">:#{@input[:gender]}</span>)
+                | p = Petrovich.new(<br>
+                |   lastname: <span class="string" data-role="lastname">"#{@input[:lastname]}"</span>,<br>
+                |   gender: <span class="string" data-role="gender">:#{@input[:gender]}</span><br>
+                | )
           li.step
             | Склоняйте:
             pre.code
               code.line
-                | p.lastname(<span class="string" data-role="lastname">"#{@input[:lastname]}"</span>, <span class="string">:genitive</span>)
+                | p.to(<span class="string">:genitive</span>).lastname
                 = ' '
-                span.comment@genitive #=> "#{@example[:genitive][:lastname]}"
+                span.comment@genitive # => "#{@example[:genitive][:lastname]}"
               code.line
-                | p.lastname(<span class="string" data-role="lastname">"#{@input[:lastname]}"</span>, <span class="string">:dative</span>)
-                = '   '
-                span.comment@dative #=> "#{@example[:dative][:lastname]}"
+                | p.to(<span class="string">:dative</span>).lastname
+                = ' '
+                span.comment@dative   # => "#{@example[:dative][:lastname]}"
           li.note
             | Подключение в модель и больше примеров смотрите
             = ' '

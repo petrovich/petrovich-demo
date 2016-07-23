@@ -53,9 +53,9 @@ class PetrovichApp < Sinatra::Base
   #
   # Параметры:
   #
+  # * lastname   - Фамилия
   # * firstname  - Имя
   # * middlename - Отчество
-  # * lastname   - Фамилия
   # * gender     - Пол
   #
   # ФИО должны указываться в именительном падаже
@@ -67,7 +67,8 @@ class PetrovichApp < Sinatra::Base
     petrovich = Petrovich(
       lastname: options[:lastname],
       firstname: options[:firstname],
-      middlename: options[:middlename]
+      middlename: options[:middlename],
+      gender: options[:gender]
     )
 
     create_hash(Petrovich::CASES) do |rcase|

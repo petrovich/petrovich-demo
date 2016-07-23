@@ -61,5 +61,5 @@ evil.block '.howto-section', ($, b, section) ->
     section.on 'update', (e, data, result) ->
       b.gender.text(':' + data.gender)
       b.lastname.text('"' + data.lastname + '"')
-      b.genitive.text('=> "' + result.genitive.lastname + '"')
-      b.dative.text('=> "' + result.dative.lastname + '"')
+      b.genitive.text('# => "' + result.genitive.lastname + '"')
+      b.dative.text('  # => "' + result.dative.lastname + '"')
