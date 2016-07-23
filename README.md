@@ -1,10 +1,5 @@
-# Petrovich demo
+# Демо Petrovich
 
-Сайт: http://petrovich.rocketscience.it
+Сайт: <http://petrovich.nlpub.ru/>
 
-### Установка
-
-Склонируйте репозиторий, затем `bundle install` и `rackup`.
-
-
-
+![Petrovich](public/logo.png)
