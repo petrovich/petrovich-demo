@@ -64,10 +64,15 @@ class PetrovichApp < Sinatra::Base
   end
 
   def example(options)
-    petrovich = Petrovich.new(options[:gender])
-    create_hash(Petrovich::CASES) do |gcase|
+    petrovich = Petrovich(
+      lastname: options[:lastname],
+      firstname: options[:firstname],
+      middlename: options[:middlename]
+    )
+
+    create_hash(Petrovich::CASES) do |rcase|
       create_hash([:lastname, :firstname, :middlename]) do |part|
-        petrovich.send(part, options[part], gcase) if options[part]
+        petrovich.to(rcase).public_send(part) if options[part]
       end
     end
   end
