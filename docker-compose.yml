@@ -1,0 +1,9 @@
+version: '2'
+services:
+  demo:
+    build: .
+    volumes:
+      - ./log/:/var/log/nginx
+    ports:
+      - "3000:80"
+    restart: always

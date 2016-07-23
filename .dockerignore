@@ -1,0 +1,9 @@
+.git
+.sass-cache
+log
+spec
+.dockerignore
+Dockerfile
+docker-compose.yml
+*.example
+public/assets
