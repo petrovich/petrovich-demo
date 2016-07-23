@@ -47,8 +47,10 @@ html lang="ru"
             pre.code
               code.line
                 | p = Petrovich.new(<br>
-                |   lastname: <span class="string" data-role="lastname">"#{@input[:lastname]}"</span>,<br>
-                |   gender: <span class="string" data-role="gender">:#{@input[:gender]}</span><br>
+                |   lastname:   <span class="string" data-role="lastname">"#{@input[:lastname]}"</span>,<br>
+                |   firstname:  <span class="string" data-role="firstname">"#{@input[:firstname]}"</span>,<br>
+                |   middlename: <span class="string" data-role="middlename">"#{@input[:middlename]}"</span>,<br>
+                |   gender:     <span class="string" data-role="gender">:#{@input[:gender]}</span><br>
                 | )
           li.step
             | Склоняйте:
