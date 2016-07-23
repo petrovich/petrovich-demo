@@ -103,6 +103,7 @@ DEPENDENCIES
   evil-front!
   multi_json (= 1.7.7)
   petrovich (~> 1.0)
+  rake (= 10.1.0)
   sinatra (= 1.4.3)
   sinatra-asset-pipeline (= 0.2.0)
   sinatra-contrib (= 1.4.0)
