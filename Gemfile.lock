@@ -39,7 +39,7 @@ GEM
     libv8 (3.16.14.3)
     mime-types (1.25)
     multi_json (1.7.7)
-    petrovich (1.1.0)
+    petrovich (1.1.1)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
