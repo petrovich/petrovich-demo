@@ -1,4 +1,4 @@
-FROM phusion/passenger-ruby22
+FROM phusion/passenger-ruby23
 
 MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
