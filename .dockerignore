@@ -2,6 +2,7 @@
 .sass-cache
 log
 spec
+vendor
 .dockerignore
 Dockerfile
 docker-compose.yml
