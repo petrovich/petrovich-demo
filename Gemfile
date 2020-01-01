@@ -1,11 +1,14 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rake", "10.1.0"
-gem "sinatra", "1.4.3"
-gem "petrovich", "~> 1.0"
-gem "sinatra-contrib", "1.4.0"
-gem "multi_json", "1.7.7"
-gem "sinatra-asset-pipeline", "0.2.0"
-gem "evil-front", github: "ai/evil-front"
-gem "sprockets-helpers", "1.0.1"
-gem "puma"
+gem 'rake', '~> 10.1.0'
+gem 'sinatra', '~> 1.4.3'
+gem 'petrovich', '~> 1.0'
+gem 'sinatra-contrib', '~> 1.4.0'
+gem 'multi_json', '~> 1.7.7'
+gem 'sinatra-asset-pipeline', '~> 0.2.0'
+gem 'evil-front', github: 'ai/evil-front', ref: '9cd21ff884c7ac3cf468010aaccd2dc1ed36826a'
+gem 'evil-blocks-rails', '~> 0.4.1'
+gem 'autoprefixer-rails', '~> 0.8.20130911'
+gem 'sprockets-helpers', '~> 1.0.1'
+gem 'slim', '~> 2.0.1'
+gem 'puma'

@@ -12,7 +12,6 @@ COPY . /home/app/petrovich/
 
 RUN \
 gem install bundler && \
-bundle config git.allow_insecure true && \
 apk add --no-cache nodejs && \
 apk add --no-cache --virtual .gem-installdeps git build-base openssl-dev && \
 bundle install --deployment --without 'development test' --jobs 4 && \
