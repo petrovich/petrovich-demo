@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rake', '~> 10.1.0'
+gem 'rake'
 gem 'sinatra', '~> 1.4.3'
 gem 'petrovich', '~> 1.0'
 gem 'sinatra-contrib', '~> 1.4.0'

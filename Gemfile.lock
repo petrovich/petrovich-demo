@@ -127,7 +127,7 @@ DEPENDENCIES
   multi_json (~> 1.7.7)
   petrovich (~> 1.0)
   puma
-  rake (~> 10.1.0)
+  rake
   sinatra (~> 1.4.3)
   sinatra-asset-pipeline (~> 0.2.0)
   sinatra-contrib (~> 1.4.0)
@@ -135,4 +135,4 @@ DEPENDENCIES
   sprockets-helpers (~> 1.0.1)
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
