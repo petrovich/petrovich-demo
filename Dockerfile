@@ -4,7 +4,7 @@ MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
 EXPOSE 9292
 
-ENV RACK_ENV=production LANG=en_US.utf8
+ENV RACK_ENV=production LANG=en_US.UTF-8
 
 WORKDIR /home/app/petrovich
 
@@ -14,7 +14,9 @@ RUN \
 gem install bundler && \
 apk add --no-cache nodejs && \
 apk add --no-cache --virtual .gem-installdeps git build-base openssl-dev && \
-bundle install --deployment --without 'development test' --jobs 4 && \
+bundle config set deployment 'true' && \
+bundle config set without 'development test' && \
+bundle install --jobs $(nproc) && \
 bundle exec rake assets:precompile && \
 apk del .gem-installdeps
 
