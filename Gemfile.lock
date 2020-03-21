@@ -20,7 +20,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.2.1)
+    activesupport (6.0.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -60,10 +60,10 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rails-sass-images (2.0.0)
+    rails-sass-images (1.0.3)
       dimensions (> 0)
       mime-types (> 0)
-      sassc (> 0)
+      sass (> 0)
     rake (13.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
@@ -73,8 +73,6 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sassc (2.2.1)
-      ffi (~> 1.9)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -129,6 +127,7 @@ DEPENDENCIES
   multi_json (~> 1.7.7)
   petrovich (~> 1.0)
   puma
+  rails-sass-images (~> 1.0.3)
   rake
   sinatra (~> 1.4.3)
   sinatra-asset-pipeline (~> 0.2.0)
