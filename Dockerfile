@@ -22,4 +22,6 @@ apk del .gem-installdeps
 
 USER nobody
 
+ENTRYPOINT ["/sbin/tini", "--"]
+
 CMD bundle exec puma -t 1:4

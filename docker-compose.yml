@@ -2,9 +2,6 @@ version: '2.3'
 services:
   demo:
     build: .
-    init: true
-    volumes:
-    - ./log/:/var/log/nginx
     ports:
     - "9292:9292"
     restart: always
