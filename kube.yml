@@ -42,10 +42,11 @@ spec:
       value: en_US.UTF-8
     - name: RUBY_MAJOR
       value: "2.7"
-    image: localhost/petrovich:latest
-    name: demo
+    image: docker.io/nlpub/petrovich-demo:latest
+    name: petrovich_demo
     ports:
     - containerPort: 9292
+      hostIP: 127.0.0.1
       hostPort: 9292
       protocol: TCP
     resources: {}
