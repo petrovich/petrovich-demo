@@ -12,7 +12,7 @@ COPY . /home/app/petrovich/
 
 RUN \
 gem install bundler && \
-apk add --no-cache nodejs && \
+apk add --no-cache tini nodejs && \
 apk add --no-cache --virtual .gem-installdeps git build-base openssl-dev && \
 bundle config set deployment 'true' && \
 bundle config set without 'development test' && \
