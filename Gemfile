@@ -10,6 +10,6 @@ gem 'evil-front', github: 'ai/evil-front', ref: '9cd21ff884c7ac3cf468010aaccd2dc
 gem 'rails-sass-images', '~> 1.0.3'
 gem 'evil-blocks-rails', '~> 0.4.1'
 gem 'autoprefixer-rails', '~> 0.8.20130911'
-gem 'sprockets-helpers', '~> 1.0.1'
+gem 'sprockets-helpers', '~> 1.3.0'
 gem 'slim', '~> 2.0.1'
 gem 'puma'
