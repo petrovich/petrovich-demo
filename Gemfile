@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'sinatra', '~> 1.4.3'
-gem 'petrovich', github: 'petrovich/petrovich-ruby'
+gem 'petrovich', github: 'petrovich/petrovich-ruby', submodules: true
 gem 'sinatra-contrib', '~> 1.4.0'
 gem 'multi_json', '~> 1.7.7'
 gem 'sinatra-asset-pipeline', '~> 0.2.0'

@@ -19,7 +19,8 @@ GIT
 
 GIT
   remote: https://github.com/petrovich/petrovich-ruby.git
-  revision: a8ef01f19d50e75685ab8b1bb76d050eb3e30f27
+  revision: afec4b15ff5b92caad13e23c63800a56217801e8
+  submodules: true
   specs:
     petrovich (1.1.4)
 
