@@ -16,3 +16,7 @@ updates:
       - dependency-name: "autoprefixer-rails"
       - dependency-name: "sprockets-helpers"
       - dependency-name: "slim"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
