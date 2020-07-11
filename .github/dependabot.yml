@@ -4,3 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "sinatra"
+      - dependency-name: "petrovich"
+      - dependency-name: "sinatra-contrib"
+      - dependency-name: "multi_json"
+      - dependency-name: "sinatra-asset-pipeline"
+      - dependency-name: "evil-*"
+      - dependency-name: "rails-sass-images"
+      - dependency-name: "evil-blocks-rails"
+      - dependency-name: "autoprefixer-rails"
+      - dependency-name: "sprockets-helpers"
+      - dependency-name: "slim"
