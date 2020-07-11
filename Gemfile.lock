@@ -17,6 +17,12 @@ GIT
       uglifier (>= 2.1.1)
       unicode_utils (>= 1.4)
 
+GIT
+  remote: https://github.com/petrovich/petrovich-ruby.git
+  revision: a8ef01f19d50e75685ab8b1bb76d050eb3e30f27
+  specs:
+    petrovich (1.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,7 +58,6 @@ GEM
     minitest (5.14.1)
     multi_json (1.7.9)
     nio4r (2.5.2)
-    petrovich (1.1.4)
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (1.6.13)
@@ -125,7 +130,7 @@ DEPENDENCIES
   evil-blocks-rails (~> 0.4.1)
   evil-front!
   multi_json (~> 1.7.7)
-  petrovich (~> 1.0)
+  petrovich!
   puma
   rails-sass-images (~> 1.0.3)
   rake
