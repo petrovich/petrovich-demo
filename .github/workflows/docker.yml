@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  mediawiki:
+  demo:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
