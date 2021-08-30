@@ -5,6 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   demo:
@@ -24,6 +25,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        push: true
+        push: ${{ github.event_name != 'pull_request' }}
         tags: |
           nlpub/petrovich-demo:latest
