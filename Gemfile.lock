@@ -70,7 +70,7 @@ GEM
       dimensions (> 0)
       mime-types (> 0)
       sass (> 0)
-    rake (13.0.3)
+    rake (13.0.6)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
