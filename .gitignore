@@ -49,3 +49,6 @@
 
 # Do not include the Rails documentation
 /doc/api
+
+# systemd
+*.service

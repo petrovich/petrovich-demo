@@ -1,7 +1,7 @@
-version: '2.3'
+version: '3'
 services:
   demo:
-    build: .
+    image: "docker.io/nlpub/petrovich-demo"
     ports:
     - "9292:9292"
     restart: always
