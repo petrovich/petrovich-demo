@@ -1,5 +1,8 @@
+pull:
+	podman-compose pull
+
 up:
-	podman-compose up --pull -d
+	podman-compose up -d
 
 down:
 	-systemctl --user stop pod-petrovich
