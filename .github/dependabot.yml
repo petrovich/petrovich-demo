@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     ignore:
       - dependency-name: "sinatra"
       - dependency-name: "petrovich"
