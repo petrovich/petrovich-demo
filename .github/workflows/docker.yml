@@ -38,3 +38,11 @@ jobs:
         tags: |
           nlpub/petrovich-demo:latest
           ghcr.io/petrovich/petrovich-demo:latest
+    - name: Update Docker Hub description
+      if: github.event_name != 'pull_request'
+      uses: peter-evans/dockerhub-description@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        repository: nlpub/petrovich-demo
+        short-description: ${{ github.event.repository.description }}
