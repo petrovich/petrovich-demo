@@ -58,7 +58,7 @@ GEM
     minitest (5.18.0)
     multi_json (1.7.9)
     nio4r (2.5.8)
-    puma (6.1.1)
+    puma (6.2.1)
       nio4r (~> 2.0)
     rack (1.6.13)
     rack-protection (1.5.5)
