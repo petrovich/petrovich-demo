@@ -1,10 +1,10 @@
-FROM ruby:2-alpine
+FROM ruby:3-alpine
 
 MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
 EXPOSE 9292
 
-ENV RACK_ENV=production LANG=en_US.UTF-8
+ENV BUNDLE_DISABLE_VERSION_CHECK=1 BUNDLE_VERSION=system LANG=en_US.UTF-8 RACK_ENV=production RUBYOPT="--disable-did_you_mean"
 
 WORKDIR /home/app/petrovich
 
