@@ -4,7 +4,7 @@ MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
 EXPOSE 9292
 
-ENV BUNDLE_DISABLE_VERSION_CHECK=1 BUNDLE_VERSION=system LANG=en_US.UTF-8 RACK_ENV=production RUBYOPT="--disable-did_you_mean"
+ENV BUNDLE_DISABLE_VERSION_CHECK=1 BUNDLE_VERSION=system LANG=en_US.UTF-8 RACK_ENV=production RUBYGEMS_PREVENT_UPDATE_SUGGESTION=1 RUBYOPT="--disable-did_you_mean"
 
 WORKDIR /home/app/petrovich
 
