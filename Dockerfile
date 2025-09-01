@@ -22,4 +22,4 @@ USER nobody
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
-CMD bundle exec puma -t 1:4
+CMD ["bundle", "exec", "puma", "-t", "1:4"]
