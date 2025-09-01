@@ -10,8 +10,8 @@ COPY . /home/app/petrovich/
 
 RUN \
 gem install bundler && \
-apk add --no-cache tini nodejs && \
-apk add --no-cache --virtual .gem-installdeps git build-base openssl-dev && \
+apk add --no-cache libffi nodejs tini && \
+apk add --no-cache --virtual .gem-installdeps build-base git libffi-dev openssl-dev && \
 bundle config set deployment 'true' && \
 bundle config set without 'development test' && \
 bundle install --jobs $(nproc) && \
